@@ -25,10 +25,10 @@ Furthermore the following rules are to be met when attempting to merge:
 
 ### Namespacing
 
-Everything needs to go into the namespace `legion` and should be in it's own general namespace within that. Also use that as an indication where to put your file.
+Everything needs to go into the namespace `rythe` and should be in it's own general namespace within that. Also use that as an indication where to put your file.
 
 i.e.: The file /core/math/vector.hpp uses
-`namespace legion::core::math { ... }`
+`namespace rythe::core::math { ... }`
 
 Use the new c++17 convention for nested namespaces, namespace names may only have snake_case letters.
 
@@ -59,14 +59,14 @@ When doing template-meta-programming make sure to use `constexpr` and `using` co
 ### A Typical File
 ```cpp
 #pragma once // we use pragma it is supported pretty much everywhere
-#include <core/math/vector.hpp> //alway include from the root,makes the file more readable
-#include <application/application.hpp> //even if it is your own directory
+#include <core/math/vector.hpp> // always include from the root, makes the file more readable
+#include <application/application.hpp> // even if it is your own directory
 
-using namespace legion::core;
+// in cpp files you may use using namespace if you so desire
+using namespace rythe::core;
 
-namespace legion::application // in cpp files you may use using namespace if you so desire
+namespace rythe::application 
 {
-
   Application::Application() : m_OtherVector { 1.0f, 2.0f } // use this constructor syntax (it's faster)
   {
     math::vec3f someVector = { 1.f, 2.f, 3.f };
@@ -121,4 +121,4 @@ alone. for example:
 
 - Try to adhere to proper English. While this is not a super critical condition. we do appreciate good punctuation and spelling (we also make these mistakes at times). A good spell-check plugin for your favorite editor helps tremendously.
 
-- Default Constructors & Destructors should not be documented, unless it does something very unexpected. In which case you should ask yourself if a constructor is the right place for your custom behavior
+- Default Constructors & Destructors should not be documented, unless it does something very unexpected. In which case you should ask yourself if a constructor is the right place for your custom behavior.
