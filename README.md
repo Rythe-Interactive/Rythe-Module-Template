@@ -8,8 +8,6 @@ This is a template for Rythe-Engine modules.
 # Usage
 Follow the steps at https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template.
 
-We recommend to create the repository with every branch in this current repository, as it'll copy over the full git-flow setup from the template.
-
 Change:
 * CMakeLists.txt -> Change all occurences of MODULE_NAME
 * Rename src/MODULE_NAME
